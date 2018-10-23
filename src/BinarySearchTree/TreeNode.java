@@ -28,6 +28,45 @@ public class TreeNode {
         }
     }
 
+    public TreeNode get (int data){
+        if (this.data == data){
+            return this;
+        }
+        if (data > this.data){
+            right.get(data);
+        }
+        if (data < this.data){
+            left.get(data);
+        }
+        return null;
+    }
+
+    public int min (){
+        if (left == null){
+            return data;
+        }else {
+            return left.min();
+        }
+    }
+
+    public int max (){
+        if (right == null){
+            return data;
+        }else {
+            return right.max();
+        }
+    }
+
+    public void traverseInOrder (){
+        if (left != null){
+            left.traverseInOrder();
+        }
+        System.out.print(data + ", ");
+        if (right != null){
+            right.traverseInOrder();
+        }
+    }
+
     public int getData() {
         return data;
     }

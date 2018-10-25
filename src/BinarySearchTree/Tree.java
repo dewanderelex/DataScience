@@ -18,6 +18,19 @@ public class Tree {
         return null;
     }
 
+    public int getHeight() {
+        if (root != null){
+            return root.getHeight();
+        }
+        return 0;
+    }
+
+    public void traversePostOrder() {
+        if (root != null){
+            root.traversePostOrder();
+        }
+    }
+
     public int min (){
         if (root == null){
             return Integer.MIN_VALUE;

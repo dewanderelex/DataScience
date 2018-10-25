@@ -41,6 +41,21 @@ public class TreeNode {
         return null;
     }
 
+    public int getHeight() {
+        if (this == null) return -1;
+        return 1 + Math.max(left.getHeight(), right.getHeight());
+    }
+
+    public void traversePostOrder() {
+        if (left != null){
+            left.traversePostOrder();;
+        }
+        if (right != null){
+            right.traversePostOrder();;
+        }
+        System.out.print(root.data + " ");
+    }
+
     public int min (){
         if (left == null){
             return data;
@@ -61,7 +76,7 @@ public class TreeNode {
         if (left != null){
             left.traverseInOrder();
         }
-        System.out.print(data + ", ");
+        System.out.print(data + " ");
         if (right != null){
             right.traverseInOrder();
         }

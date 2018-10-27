@@ -1,5 +1,7 @@
 package BinarySearchTree;
 
+
+
 public class Tree {
     private TreeNode root;
 
@@ -29,6 +31,10 @@ public class Tree {
         if (root != null){
             root.traversePostOrder();
         }
+    }
+
+    public TreeNode push(int data){
+        return push(root, data);
     }
 
     public int min (){

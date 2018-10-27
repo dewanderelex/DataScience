@@ -56,6 +56,24 @@ public class TreeNode {
         System.out.print(root.data + " ");
     }
 
+    public static TreeNode push(Node root,int data) {
+        
+        // Base case
+        if (root == null){
+            root = new Node (data);
+            return root;
+        }
+        
+        // Recursive
+        if (data < root.data){
+            root.left = insert(root.left, data);
+        }else if (data > root.data){
+            root.right = insert(root.right, data);
+        }
+    	
+        return root;
+    }
+
     public int min (){
         if (left == null){
             return data;
